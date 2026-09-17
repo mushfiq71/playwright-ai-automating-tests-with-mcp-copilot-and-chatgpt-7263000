@@ -1,9 +1,9 @@
 import { test as base } from '@playwright/test';
-import { LoginPage } from '../../tests-vibed/pages/LoginPage';
-import { BoardPage } from '../../tests-vibed/pages/BoardPageBoardPage';
-import { CreateBugModal } from '../../tests-vibed/pages/CreateBugModal';
-import { EditBugModal } from '../../tests-vibed/pages/EditBugModaltBugModal';
-import { TitleBar } from '../../tests-vibed/pages/TitleBar';
+import { LoginPage } from '../pages/LoginPage';
+import { BoardPage } from '../pages/BoardPage';
+import { CreateBugModal } from '../pages/CreateBugModal';
+import { EditBugModal } from '../pages/EditBugModal';
+import { TitleBar } from '../pages/TitleBar';
 
 // Declare fixture types for TypeScript support
 type PagesFixtures = {

@@ -41,8 +41,7 @@ function severityBadgeClass(severity: string): string {
  */
 function normalizeForSearch(text: string): string {
   const lower = text.toLowerCase().trim();
-  const noPunctuation = lower.replace(/\p{P}/gu, " ");
-  return noPunctuation.replace(/\s+/g, " ").trim();
+  return lower.replace(/[\p{P}\s]/gu, "");
 }
 
 /** Return true if normalized bug title contains the normalized query. */
@@ -163,22 +162,20 @@ export function BoardPage() {
               <button
                 type="button"
                 onClick={() => setStateFilter("OPEN")}
-                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 ${
-                  stateFilter === "OPEN"
+                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 ${stateFilter === "OPEN"
                     ? "bg-primary text-stone-800 shadow-sm ring-1 ring-stone-200/50"
                     : "text-stone-500 hover:bg-stone-50 hover:text-stone-700"
-                }`}
+                  }`}
               >
                 Open
               </button>
               <button
                 type="button"
                 onClick={() => setStateFilter("CLOSED")}
-                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 ${
-                  stateFilter === "CLOSED"
+                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 ${stateFilter === "CLOSED"
                     ? "bg-primary text-stone-800 shadow-sm ring-1 ring-stone-200/50"
                     : "text-stone-500 hover:bg-stone-50 hover:text-stone-700"
-                }`}
+                  }`}
               >
                 Closed
               </button>
